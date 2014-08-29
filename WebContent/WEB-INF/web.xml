@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>J2eeCourse</display-name>
+  <context-param>
+    <param-name>min</param-name>
+    <param-value>10</param-value>
+  </context-param>
+  <context-param>
+    <param-name>max</param-name>
+    <param-value>100</param-value>
+  </context-param>
+  <context-param>
+    <param-name>max_num_of_attempts</param-name>
+    <param-value>10</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>GuessStartServlet</servlet-name>
+    <servlet-class>packages.ilia.GuessStartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GuessStartServlet</servlet-name>
+    <url-pattern>/guess</url-pattern>
+  </servlet-mapping>
+  <listener>
+    <listener-class>packages.ilia.GuessInitializerListener</listener-class>
+  </listener>
+  <filter>
+  	<filter-name>HelloWorldFilter</filter-name>
+  	<filter-class>packages.ilia.HelloWorldFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>HelloWorldFilter</filter-name>
+  	<url-pattern>/Welcome.jsp</url-pattern>
+  </filter-mapping>
+</web-app>
